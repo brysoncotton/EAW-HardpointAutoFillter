@@ -2,46 +2,6 @@
 This tool generates structured XML entries for hardpoints for the game Empire at War: Forces of Corruption.
 The intent is to streamline the task of creating of multiple hardpoints that follow a similar naming convention.
 
-## Getting Started
-1. Download the provided .exe under the releases section
-
-2. Fill out all necessary fields for your hardpoints. (You can paste existing hardpoint code into the top field to use as a template.)
-
-3. Replace the name of the hardpoint with YOUR_hardpoint_NAME_00 (e.g., HP_MC80_TB_00).
-
-4. The program searches for 00 in the following fields and replaces it with consecutive values (01, 02, ... 09, 10, etc.):
-
-       Hardpoint Name
-
-       Model To Attach
-  
-       Attachment Bone
-  
-       Collision Mesh
-  
-       Damage_Decal
-  
-       Damage_Particles
- 
-       Fire Bone A
-  
-       Fire Bone B
- 
-       Fire Bone C
-
-       Turret_Bone_Name
-
-       Barrel_Bone_Name
-  
-6. Click "Generate XML".
-
-7. Verify the generated XML is correct.
-
-8. Click "Copy Output" and paste it into your hardpoint .xml file.
-9. 
-10. Click "Copy Names" to copy the names of the generated hardpoints for convenient pasting into your unit .xml file.
-
-
 The generator can:
 - Produce multiple hardpoint XML entries with incremental naming and values.
 - Load and parse existing hardpoint XML snippets to autofill input fields.
@@ -56,24 +16,52 @@ Features
 - Flexible Input: Customize values for all relevant hardpoint properties.
 
 ## Usage Instructions
-1. Enter the number of entries you want to generate.
-2. Set the start value (default is `1`).
-3. Toggle 'Every Other' if you want to increment numbers by 2 instead of 1.
-4. Manual List lets you add specific hardpoints; just type the values of the hardpoints that will replace the 00 throughout the hardpoint XML code
-5. Paste existing hardpoint XML into the text box if you want to autofill the fields.
-6. Fill in or adjust the input fields as needed.
-7. Force Consecutive next to the "Hardpoint Name" tag forces the 00 in that specific tag to increase by increments of 1 starting at the value defined in the "start" dialogue above
-8. Click Generate XML to produce the output.
-9. Click Copy Output to copy the XML to your clipboard, or Copy Names to copy just the hardpoint names.
-10. Clear Fields resets everything for a fresh start.
+1. Setup & Template
+
+       Download: Run the .exe from the latest [Releases] section.
+       
+       Load Template: Paste an existing hardpoint XML into the top field to autofill the generator, or fill the fields manually.
+       
+       The "00" Rule: For any field you want to be numbered (e.g., HP_Star_Destroyer_TL_00), ensure the string ends in or contains 00. The program will replace this with 01, 02, etc.
+
+3. Supported Numbering Fields
+
+       The program scans for 00 in the following tags:
+       
+       Hardpoint Name
+       
+       Model To Attach & Collision Mesh
+       
+       Attachment, Turret, & Barrel Bones
+       
+       Fire Bones (A, B, and C)
+       
+       Damage Decals & Particles
+
+3. Generation Settings
+   
+       Start Value: Set the starting number (default is 1).
+       
+       Every Other: Toggles increments of 2 (useful for port/starboard separation).
+       
+       Force Consecutive: When enabled for the "Hardpoint Name," names will always increase by 1, even if other fields use different logic.
+       
+       Manual List: Enter specific suffixes (separated by commas or spaces) to replace 00 with custom values.
+
+5. Output
+   
+       Generate XML: Click this to populate the output box.
+       
+       Copy Output: Copies the full XML blocks ready for your Hardpoints.xml.
+       
+       Copy Names: Copies only the <Hardpoint_Name> strings, ready to be pasted into a unit's <HardPoints> tag.
 
 ## License
 
-```
 Copyright (c) 2025 Bryson Cotton
 This software is free for personal use only.
 Redistribution, modification, or resale is prohibited.
-```
+
 
 You do not need to file anything to use this software for personal purposes. Any use beyond that requires explicit permission from the copyright holder.
 
