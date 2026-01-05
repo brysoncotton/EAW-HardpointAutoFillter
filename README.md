@@ -3,27 +3,43 @@ This tool generates structured XML entries for hardpoints for the game Empire at
 The intent is to streamline the task of creating of multiple hardpoints that follow a similar naming convention.
 
 ## Getting Started
-Fill out all necessary fields for your hardpoints.
-(You can paste existing hardpoint code into the top field to use as a template.)
+1. Download the provided .exe under the releases section
 
-Replace the name of the hardpoint with YOUR_hardpoint_NAME_00 (e.g., HP_MC80_TB_00).
-The program searches for 00 in the following fields and replaces it with consecutive values (01, 02, ... 09, 10, etc.):
-Hardpoint Name
-Model To Attach
-Attachment Bone
-Collision Mesh
-Damage_Decal
-Damage_Particles
-Fire Bone A
-Fire Bone B
-Fire Bone C
-Click "Generate XML".
+2. Fill out all necessary fields for your hardpoints. (You can paste existing hardpoint code into the top field to use as a template.)
 
-Verify the generated XML is correct.
+3. Replace the name of the hardpoint with YOUR_hardpoint_NAME_00 (e.g., HP_MC80_TB_00).
 
-Click "Copy Output" and paste it into your hardpoint .xml file.
+4. The program searches for 00 in the following fields and replaces it with consecutive values (01, 02, ... 09, 10, etc.):
 
-Click "Copy Names" to copy the names of the generated hardpoints for convenient pasting into your unit .xml file.
+       Hardpoint Name
+
+       Model To Attach
+  
+       Attachment Bone
+  
+       Collision Mesh
+  
+       Damage_Decal
+  
+       Damage_Particles
+ 
+       Fire Bone A
+  
+       Fire Bone B
+ 
+       Fire Bone C
+
+       Turret_Bone_Name
+
+       Barrel_Bone_Name
+  
+6. Click "Generate XML".
+
+7. Verify the generated XML is correct.
+
+8. Click "Copy Output" and paste it into your hardpoint .xml file.
+9. 
+10. Click "Copy Names" to copy the names of the generated hardpoints for convenient pasting into your unit .xml file.
 
 
 The generator can:
@@ -38,19 +54,6 @@ Features
 - XML Parsing: Load an existing hardpoint XML snippet to populate fields automatically.
 - Clipboard Support: Copy full XML output or just the hardpoint names.
 - Flexible Input: Customize values for all relevant hardpoint properties.
-
-### Prerequisites
-- Python 3.x
-- No external libraries required (uses the standard Python library: `tkinter`, `xml.etree.ElementTree`)
-
-### How to Run
-1. Ensure Python 3 is installed on your system.
-2. Download the source code (or clone the repo if you make one).
-3. Run the script:
-
-```bash
-python hardpoint_generator.py
-```
 
 ## Usage Instructions
 1. Enter the number of entries you want to generate.
